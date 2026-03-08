@@ -5,6 +5,7 @@ import io.github.mayo8432.spleef.Main
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.entity.Player
+import org.bukkit.entity.Snowball
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.ProjectileHitEvent
@@ -29,5 +30,20 @@ class ProjectileHandler : Listener {
 
         // Swaps the snow block for air
         block.type = Material.AIR
+    }
+
+    @EventHandler
+    fun onPlayerHit (event: ProjectileHitEvent) {
+
+        // @param Only react, if the victim is a player
+        val player = event.hitEntity as? Player ?: return
+        // @param Only reacts, if the thrown item is a snowball
+        val snowball = event.entity as? Snowball ?: return
+
+        // Returns if the player is not in a game
+        if (!player.gma.isInGame) return
+
+        // Cancels event
+        event.isCancelled = true
     }
 }

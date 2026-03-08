@@ -33,11 +33,6 @@ kotlin {
     jvmToolchain(21)
 }
 
-java {
-    withSourcesJar()
-    withJavadocJar()
-}
-
 tasks.assemble {
     dependsOn(tasks.reobfJar)
 }
