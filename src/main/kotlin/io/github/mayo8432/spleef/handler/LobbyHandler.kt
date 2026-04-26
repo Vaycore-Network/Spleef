@@ -55,7 +55,7 @@ class LobbyHandler : Listener {
         event.player.inventory.setItem(1, visibilityItem)
         event.player.inventory.setItem(2, privateGameItem)
 
-        event.player.inventory.setItem(4, ItemBuilder(Material.PAPER, event.player.language.child("spleef").getCmp("lobby.item.join"))
+        event.player.inventory.setItem(7, ItemBuilder(Material.PAPER, event.player.language.child("spleef").getCmp("lobby.item.join"))
             .onEvent(PlayerInteractEvent::class.java) {
                 if (!it.action.isRightClick)
                     return@onEvent
