@@ -49,7 +49,6 @@ class Main : JavaPlugin() {
         BlockBreakHandler()
         InteractionHandler()
         ProjectileHandler()
-        ConnectionHandler()
 
         // Lobby handler
         // Only enable if GameLobby plugin is enabled
